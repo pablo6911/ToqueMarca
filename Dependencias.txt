@@ -1,0 +1,68 @@
+GITHUB
+
+echo "# toquemarca" >> README.md
+git init
+git add README.md
+(git config --global user.email "you@example.com")
+git commit -m "first commit"
+git remote add origin https://github.com/pablo6911/toquemarca.git
+git push -u origin main  (git push origin master -f)
+
+git remote add origin https://github.com/pablo6911/toquemarca.git
+git branch -M main
+git push -u origin main
+-------------------
+
+Heroku
+
+$ heroku login
+
+$ heroku git:remote -a toquemarca
+$ git push heroku master
+$ git .
+$ git add .
+$ git status
+$ git commit -m "otro commit"
+$ git push heroku master
+
+$ heroku git:remote -a toquemarca
+
+-----------------------
+
+conexion
+
+mongodb+srv://pablo:<password>@toquelike.n51hf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+mongodb+srv://pablo:1234@toquelike.n51hf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+-----------------
+-----------
+Dependencias
+
+go get go.mongodb.org/mongo-driver/mongo
+go get go.mongodb.org/mongo-driver/mongo/options
+go get go.mongodb.org/mongo-driver/bson
+go get go.mongodb.org/mongo-driver/bson/primitive
+go get golang.org/x/crypto/bcrypt
+go get githab.com/gorilla/mux
+go get githab.com/rs/cors
+go get githab.com/dgrijalva/jwt-go
+dir
+
+-----------------------
+guardar y subir las cosas
+
+$ git status
+$ git add .
+$ git status
+$ git commit -m "otro commit"
+
+$ git push origin master
+$ git push heroku master
+
+-------------------------
+Conpilar
+go build main.go
+dir main.*
+go run main.go
+
+dir main.*
