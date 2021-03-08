@@ -8,16 +8,16 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-//InsertarRegistro es la parada final con la BD para insertar los datos del user-----
-func InsertarRegistro(u models.Usuario) (string, bool, error) {
+//InsertarRegistroVideo es la parada final con la BD para insertar los datos del user-----
+func InsertarRegistroVideo(u models.Video) (string, bool, error) {
 
 	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 	defer cancel()
 
 	db := MongoCN.Database("toquelike")
-	col := db.Collection("usermarca")
+	col := db.Collection("videomarca")
 
-	u.Password, _ = EncriptarPassword(u.Password)
+	u.Codigo, _ = EncriptarPassword(u.Codigo)
 
 	result, err := col.InsertOne(ctx, u)
 	if err != nil {
