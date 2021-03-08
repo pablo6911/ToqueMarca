@@ -3,7 +3,7 @@ package middlew
 import (
 	"net/http"
 
-	"github.com/pablo6911/twittergolang/bd"
+	"github.com/pablo6911/toquemarca/bd"
 )
 
 //ChequeoBD es el middlew que me permite conocer el estado de la BD
