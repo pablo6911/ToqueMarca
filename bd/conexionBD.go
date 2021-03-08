@@ -10,7 +10,7 @@ import (
 
 // MongoCN -> ConectarBD
 var MongoCN = ConectarBD()
-var clienteOptions = options.Client().ApplyURI("mongodb+srv://pablo:1234@toquelike.n51hf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+var clienteOptions = options.Client().ApplyURI("mongodb+srv://pablo:1234@toquelike.n51hf.mongodb.net/myFirstDatabase?authSource=admin&replicaSet=atlas-v0aybv-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true")
 
 // ConectarBD es la funcion que me permite conectar con la BD
 func ConectarBD() *mongo.Client {
