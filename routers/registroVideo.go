@@ -3,13 +3,16 @@ package routers
 import (
 	"encoding/json"
 	"net/http"
+	"time"
 
 	"github.com/pablo6911/toquemarca/bd"
+	"github.com/pablo6911/toquemarca/jwt"
 	"github.com/pablo6911/toquemarca/models"
 )
 
 //Video es la func para crear en la BD el registro de user-------
 func Video(w http.ResponseWriter, r *http.Request) {
+	w.Header().Add("Content-Type", "application/json")
 
 	var t models.Video
 
@@ -27,11 +30,11 @@ func Video(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if len(t.Codigo) < 10 {
-		http.Error(w, "Codigo de verificacion Que te genera la Empresa ToqueLaik", 400)
+		http.Error(w, "Inserte el Codigo de verificacion Que te genera la Empresa ToqueLaik de 10 digitos", 400)
 		return
 	}
 
-	_, encontrado, _ := bd.ChequeoYaNombreVideo(t.Nombre)
+	documento, encontrado, _ := bd.ChequeoYaNombreVideo(t.Nombre)
 	if encontrado == true {
 		http.Error(w, "Ya existe un video con ese Nombre", 400)
 		return
@@ -45,5 +48,25 @@ func Video(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "No se ha logrado insertar el Video ", 400)
 		return
 	}
+
+	jwtkey, err := jwt.GeneroJWTVideo(documento)
+	if err != nil {
+		http.Error(w, "Ocurrio un Error al intentar generar el Token correspndiente"+err.Error(), 400)
+		return
+	}
+
+	resp := models.RespuestaLogin{
+		Token: jwtkey,
+	}
+
+	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
+	json.NewEncoder(w).Encode(resp)
+
+	expirationTime := time.Now().Add(24 * time.Hour)
+	http.SetCookie(w, &http.Cookie{
+		Name:    "token",
+		Value:   jwtkey,
+		Expires: expirationTime,
+	})
 }

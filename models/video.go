@@ -15,4 +15,5 @@ type Video struct {
 	Codigo      string             `bson:"codigo" json:"codigo,omitempty"`
 	Link        string             `bson:"link" json:"link,omitempty"`
 	Empresa     string             `bson:"empresa" json:"empresa,omitempty"`
+	Video       string             `bson:"video" json:"viedo,omitempty"`
 }
