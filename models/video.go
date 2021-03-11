@@ -12,7 +12,7 @@ type Video struct {
 	Nombre      string             `bson:"nombre" json:"nombre,omitempty"`
 	FechaSubida time.Time          `bson:"fechaSubida" json:"fechaSubida,omitempty"`
 	Email       string             `bson:"email" json:"email"`
-	Codigo      string             `bson:"password" json:"password,omitempty"`
+	Codigo      string             `bson:"codigo" json:"codigo,omitempty"`
 	Link        string             `bson:"link" json:"link,omitempty"`
 	Empresa     string             `bson:"empresa" json:"empresa,omitempty"`
 }
