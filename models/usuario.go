@@ -17,6 +17,7 @@ type Usuario struct {
 	Ubicacion       string             `bson:"ubicacion" json:"ubicacion,omitempty"`
 }
 
+/*
 //Video es el modelo de Video de la base de MongoDB--------
 type Video struct {
 	ID          primitive.ObjectID `bson:"_id,omitempty" json:"id"`
@@ -27,4 +28,4 @@ type Video struct {
 	Link        string             `bson:"link" json:"link,omitempty"`
 	Empresa     string             `bson:"empresa" json:"empresa,omitempty"`
 	Video       string             `bson:"video" json:"viedo,omitempty"`
-}
+}*/

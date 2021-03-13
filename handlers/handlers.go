@@ -14,9 +14,9 @@ import (
 //Manejadores seteo mi puerto, el Handler y pongo a escuchar al servidor---------
 func Manejadores() {
 	router := mux.NewRouter()
-	//Registro video y marca
+	//Registro marca
 	router.HandleFunc("/registro", middlew.ChequeoBD(routers.Registro)).Methods("POST")
-	router.HandleFunc("/registroVideo", middlew.ChequeoBD(routers.Video)).Methods("POST")
+	//router.HandleFunc("/registroVideo", middlew.ChequeoBD(routers.Video)).Methods("POST")
 
 	//login marca
 	router.HandleFunc("/login", middlew.ChequeoBD(routers.Login)).Methods("POST")

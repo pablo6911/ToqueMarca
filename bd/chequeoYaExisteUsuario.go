@@ -27,7 +27,7 @@ func ChequeoYaExisteUsuario(email string) (models.Usuario, bool, string) {
 	}
 	return resultdo, true, ID
 }
-
+/*
 //ChequeoYaNombreVideo recibe un nombre de parametro y chequea si ya esta en la BD-------
 func ChequeoYaNombreVideo(nombre string) (models.Video, bool, string) {
 	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
@@ -46,4 +46,4 @@ func ChequeoYaNombreVideo(nombre string) (models.Video, bool, string) {
 		return resultdo, false, ID
 	}
 	return resultdo, true, ID
-}
+}*/

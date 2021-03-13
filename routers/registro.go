@@ -3,10 +3,8 @@ package routers
 import (
 	"encoding/json"
 	"net/http"
-	"time"
 
 	"github.com/pablo6911/toquemarca/bd"
-	"github.com/pablo6911/toquemarca/jwt"
 	"github.com/pablo6911/toquemarca/models"
 )
 
@@ -46,6 +44,7 @@ func Registro(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusCreated)
 }
 
+/*
 //Video es la func para crear en la BD el registro de user-------
 func Video(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("Content-Type", "application/json")
@@ -105,4 +104,4 @@ func Video(w http.ResponseWriter, r *http.Request) {
 		Value:   jwtkey,
 		Expires: expirationTime,
 	})
-}
+}*/

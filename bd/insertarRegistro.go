@@ -30,6 +30,7 @@ func InsertarRegistro(u models.Usuario) (string, bool, error) {
 
 }
 
+/*
 //InsertarRegistroVideo es la parada final con la BD para insertar los datos del user-----
 func InsertarRegistroVideo(u models.Video) (string, bool, error) {
 
@@ -50,4 +51,4 @@ func InsertarRegistroVideo(u models.Video) (string, bool, error) {
 	ObjID, _ := result.InsertedID.(primitive.ObjectID)
 	return ObjID.String(), true, nil
 
-}
+}*/

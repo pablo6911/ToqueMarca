@@ -28,6 +28,7 @@ func GeneroJWT(t models.Usuario) (string, error) {
 	return tokenstr, nil
 }
 
+/*
 //GeneroJWTVideo genera el encriptado con JWT-----------
 func GeneroJWTVideo(t models.Video) (string, error) {
 
@@ -49,4 +50,4 @@ func GeneroJWTVideo(t models.Video) (string, error) {
 		return tokenstr, err
 	}
 	return tokenstr, nil
-}
+}*/
