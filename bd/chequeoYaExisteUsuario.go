@@ -27,23 +27,23 @@ func ChequeoYaExisteUsuario(email string) (models.Usuario, bool, string) {
 	}
 	return resultdo, true, ID
 }
-/*
-//ChequeoYaNombreVideo recibe un nombre de parametro y chequea si ya esta en la BD-------
-func ChequeoYaNombreVideo(nombre string) (models.Video, bool, string) {
+
+//ChequeoNombre recibe un nombre de parametro y chequea si ya esta en la BD-------
+func ChequeoNombre(nombreVideo string) (models.GraboVideo, bool, string) {
 	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 	defer cancel()
 
 	db := MongoCN.Database("toquelike")
 	col := db.Collection("videomarca")
 
-	condicion := bson.M{"nombre": nombre}
+	condicion := bson.M{"nombreVideo": nombreVideo}
 
-	var resultdo models.Video
+	var resultdo models.GraboVideo
 
 	err := col.FindOne(ctx, condicion).Decode(&resultdo)
-	ID := resultdo.ID.Hex()
+	ID := resultdo.UserID
 	if err != nil {
 		return resultdo, false, ID
 	}
 	return resultdo, true, ID
-}*/
+}
