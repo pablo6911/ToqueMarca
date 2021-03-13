@@ -16,7 +16,9 @@ func Manejadores() {
 	router := mux.NewRouter()
 	//Registro marca
 	router.HandleFunc("/registro", middlew.ChequeoBD(routers.Registro)).Methods("POST")
-	//router.HandleFunc("/registroVideo", middlew.ChequeoBD(routers.Video)).Methods("POST")
+
+	//Mando mensajes del video
+	router.HandleFunc("/registroVideo", middlew.ChequeoBD(routers.GraboVideo)).Methods("POST")
 
 	//login marca
 	router.HandleFunc("/login", middlew.ChequeoBD(routers.Login)).Methods("POST")
